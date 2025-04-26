@@ -1,0 +1,32 @@
+{
+    "name": "Weather Alerts",
+    "description": "Get weather alerts for US states from the National Weather Service",
+    "version": "0.1.0",
+    "tools": [
+        {
+            "name": "get_alerts",
+            "description": "Get weather alerts for a US state",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "state": {
+                        "type": "string",
+                        "description": "Two-letter US state code (e.g. CA, NY)",
+                        "enum": [
+                            "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA",
+                            "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD",
+                            "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ",
+                            "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC",
+                            "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"
+                        ]
+                    }
+                },
+                "required": ["state"]
+            }
+        }
+    ],
+    "server": {
+        "path": "server/weather.py",
+        "object": "mcp"
+    }
+} 
